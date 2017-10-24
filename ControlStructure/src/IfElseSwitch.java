@@ -2,7 +2,9 @@
 public class IfElseSwitch {
 	
 	public static void main(String[] args){
-		compare3Numbers(1,2,3);
+		//compare3Numbers(1,2,3);
+		//computeRealSolutions(10, 6, 1);
+		//System.out.println(computeGrade(90));
 	}
 	
 	//Aufgabe 2a
@@ -28,6 +30,8 @@ public class IfElseSwitch {
 		}
 	}
 	
+	//Aufgabe 2b
+	
 	public static boolean isLeapYear(int year) {
 		if(year<2970&&year>1470) {
 			if(year % 100 == 0 && year % 400 != 0) return false;
@@ -37,4 +41,35 @@ public class IfElseSwitch {
 		
 		return false;
 	}
+	
+	//Aufgabe 2c
+	
+	public static void computeRealSolutions(int a,int b,int c) {
+		double x1,x2;
+		x1 = (-b+Math.sqrt(b*b-4*a*c))/(2*a);
+		x2 = (-b-Math.sqrt(b*b-4*a*c))/(2*a);
+		if(Double.isNaN(x1))System.out.println("No Solution");
+		else System.out.println(x1 + " " + x2);
+	}
+	
+	//Aufgabe 2d
+	
+	public static double computeGrade(int points) {
+		if(points<50) return 5.0;
+		if(points<59) return 4.0;
+		if(points<63) return 3.7;
+		if(points<67) return 3.3;
+		if(points<71) return 3.0;
+		if(points<74) return 2.7;
+		if(points<77) return 2.3;
+		if(points<81) return 2.0;
+		if(points<86) return 1.7;
+		if(points<91) return 1.3;
+		if(points<=100) return 1.0;
+		System.out.println("Wrong Input");
+		
+		return Double.NaN;
+	}
+	
+	
 }
